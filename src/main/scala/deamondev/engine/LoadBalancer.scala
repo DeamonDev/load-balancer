@@ -53,8 +53,10 @@ case class LoadBalancerLive(
       _ <- ZIO.logInfo(
         s"[worker-${worker.id}] waiting for something to work on..."
       )
+      _ <- workerService.setWorkerState(worker.id, Waiting)
       req <- requests.take
       _ <- ZIO.logInfo(s"[worker-${worker.id}] working...")
+      _ <- workerService.setWorkerState(worker.id, Working)
       reqHash <- computeRequestHash(req)
       promise <- responsePromisesR.get.map(m => m(reqHash))
       nextServerId <- chooseNextServer(lastlyUsedServerIdR)
