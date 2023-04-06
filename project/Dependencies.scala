@@ -68,9 +68,9 @@ object Dependencies {
     "dev.zio" %% "zio-mock" % "1.0.0-RC8",
     "dev.zio" %% "zio-prelude" % "1.0.0-RC15",
     "dev.zio" %% "zio-streams" % ZIOVersion,
-    "dev.zio" %% "zio-test" % ZIOVersion % Test,
-    "dev.zio" %% "zio-test-magnolia" % ZIOVersion % Test,
-    "dev.zio" %% "zio-test-sbt" % ZIOVersion % Test
+    "dev.zio" %% "zio-test" % "2.0.10" % Test,
+    "dev.zio" %% "zio-test-magnolia" % "2.0.10" % Test,
+    "dev.zio" %% "zio-test-sbt" % "2.0.10" % Test
   )
 
   lazy val dependencies = database ++ logging ++ tapir ++ zio ++ quill ++ jwt ++ mail ++ cats ++ crypto ++ sttp

@@ -3,6 +3,8 @@ package deamondev
 import deamondev.config.Config._
 import deamondev.engine.LoadBalancer
 import deamondev.engine.LoadBalancerLive
+import deamondev.engine.Worker
+import deamondev.engine.WorkerServiceLive
 import deamondev.server.HttpServer
 import deamondev.server.HttpServerLive
 import deamondev.server.HttpServerSettings
@@ -19,8 +21,6 @@ import zio._
 
 import java.io.IOException
 import scala.collection.mutable
-import deamondev.engine.WorkerServiceLive
-import deamondev.engine.Worker
 
 object Main extends ZIOAppDefault {
 
