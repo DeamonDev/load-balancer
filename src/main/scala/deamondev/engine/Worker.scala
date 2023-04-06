@@ -1,3 +1,7 @@
 package deamondev.engine
 
-final case class Worker(id: Int) 
+import zio._
+
+final case class Worker(id: Int) {
+  val workerStateR: UIO[Ref[WorkerState]] = Ref.make[WorkerState](Waiting)
+}
